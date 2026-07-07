@@ -1,19 +1,18 @@
 package dev.trelawnm.exercises;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Omnivore {
 
     public Cat(Builder builder) {
         super(builder);
     }
 
-    @Override
-    public double getFeedInfoKg() {
-        return this.getWeight() * .1;
+    public String hunt() {
+        return "I can hunt for mice";
     }
 
     @Override
     public String toString() {
-        return String.format("Cat name = %s, age = %d, feed = %.2f", getName(), getAge(), getFeedInfoKg());
+        return String.format("Cat name = %s, age = %d. %s", getName(), getAge(), hunt());
     }
 
     public static Builder builder() {

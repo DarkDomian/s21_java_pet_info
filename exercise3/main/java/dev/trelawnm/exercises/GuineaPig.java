@@ -1,19 +1,18 @@
 package dev.trelawnm.exercises;
 
-public class Cat extends Animal {
+public class GuineaPig extends Animal implements Herbivore {
 
-    public Cat(Builder builder) {
+    public GuineaPig(Builder builder) {
         super(builder);
     }
 
-    @Override
-    public double getFeedInfoKg() {
-        return this.getWeight() * .1;
+    public String chill() {
+        return "I can chill for 12 hours";
     }
 
     @Override
     public String toString() {
-        return String.format("Cat name = %s, age = %d, feed = %.2f", getName(), getAge(), getFeedInfoKg());
+        return String.format("GuineaPig name = %s, age = %d. %s", getName(), getAge(), chill());
     }
 
     public static Builder builder() {
@@ -24,7 +23,7 @@ public class Cat extends Animal {
 
         @Override
         public Animal build() {
-            return new Cat(this);
+            return new GuineaPig(this);
         }
     }
 }

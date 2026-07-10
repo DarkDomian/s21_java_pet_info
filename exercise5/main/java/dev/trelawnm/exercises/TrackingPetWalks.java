@@ -31,7 +31,6 @@ public class TrackingPetWalks {
             return;
         }
 
-        List<Animal> petList = new ArrayList<>();
         List<Runnable> tasks = new ArrayList<>();
 
         for (int i = 0; i < n; i++){
@@ -49,8 +48,6 @@ public class TrackingPetWalks {
                                         .build();
                     default -> throw new IllegalArgumentException("Incorrect input. Unsupported pet type");
                 };
-
-                petList.add(pet);
 
                 tasks.add(() -> {
                     try {
